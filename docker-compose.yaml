@@ -1,0 +1,26 @@
+version: "3.3"
+
+services:
+  app:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.env
+    image: app:server
+    container_name: app_container
+    command: sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      - db
+    links:
+      - db:db
+
+  db:
+    image: postgres
+    environment:
+      - DB_NAME=postgres
+      - DB_PASSWORD=postgres
+      - DB_USER=postgres
+      - POSTGRES_HOST_AUTH_METHOD=trust

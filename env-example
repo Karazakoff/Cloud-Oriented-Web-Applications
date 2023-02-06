@@ -1,0 +1,15 @@
+SECRET_KEY=<str:key>
+DEBUG=<bool:0/1>
+ALLOWED_HOSTS=127.0.0.1 www.example.com other.domain.com 
+DB_NAME=<str:database name>
+DB_USER=<str:psql user>
+DB_PASSWORD=<str:psql password>
+
+# SECRET_KEY='nvyj6_-&m@lg87$%l3@@#+r046ioem^18+ql*)t)'
+# DEBUG=True
+# DB_ENGINE=django.db.backends.mysql
+# DATABASE_NAME=blogs
+# DB_USER=root
+# DB_PASSWORD=
+# DB_HOST=127.0.0.1
+# DB_PORT=3306
